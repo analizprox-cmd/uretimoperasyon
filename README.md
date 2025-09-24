@@ -7,31 +7,28 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Firebase SDK -->
     <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
-        
-        // Firebase yapılandırması
-        const firebaseConfig = {
-            apiKey: "AIzaSyAF8ZcI4lYPjnojma094lo_orSfX8I9Fh8",
-            authDomain: "akca-pro-x-dashboard.firebaseapp.com",
-            databaseURL: "https://operayonanaliz-default-rtdb.europe-west1.firebasedatabase.app/",
-            projectId: "akca-pro-x-dashboard",
-            storageBucket: "akca-pro-x-dashboard.appspot.com",
-            messagingSenderId: "123456789012",
-            appId: "1:123456789012:web:abcdef123456789012345678"
-        };
+                // Import the functions you need from the SDKs you need
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+                // TODO: Add SDKs for Firebase products that you want to use
+                // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Firebase'i başlat
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
+                // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                const firebaseConfig = {
+                    apiKey: "AIzaSyDIte-Zy2Oye0TYk8-BjKHY9IZ3GtbLark",
+                    authDomain: "operayonanaliz.firebaseapp.com",
+                    databaseURL: "https://operayonanaliz-default-rtdb.europe-west1.firebasedatabase.app",
+                    projectId: "operayonanaliz",
+                    storageBucket: "operayonanaliz.firebasestorage.app",
+                    messagingSenderId: "538531429447",
+                    appId: "1:538531429447:web:52f6e256cfe4beec09c562",
+                    measurementId: "G-E44NN8QR37"
+                };
 
-        // Global değişkenler
-        window.auth = auth;
-        window.provider = provider;
-        window.signInWithPopup = signInWithPopup;
-        window.onAuthStateChanged = onAuthStateChanged;
-        window.signOut = signOut;
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
     </script>
     <style>
         * {
